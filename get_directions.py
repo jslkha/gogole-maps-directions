@@ -6,6 +6,7 @@ destinations = sys.argv[1:]
 
 if len(sys.argv) > 1:
     final_url = base_url
+    
     for destination in destinations:
         final_url += str(destination + "/")
 
