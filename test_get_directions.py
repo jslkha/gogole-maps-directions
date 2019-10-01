@@ -15,5 +15,7 @@ class TestGetDirections(unittest.TestCase):
 
         self.assertEqual(get_directions(arguments), "Error: Number of locations should be greater than 1 and less than 11")
 
+    #TODO: What about only putting in one location? Is that an error or not?
+
 if __name__ == '__main__':
     unittest.main()
