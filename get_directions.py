@@ -20,7 +20,8 @@ def get_directions(arguments):
         
     else:
         error_message = "Error: Number of locations should be greater than 1 and less than 11"
-        
+        print(error_message)
+
         return error_message
 
     return final_url
