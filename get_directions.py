@@ -1,21 +1,31 @@
 import sys
 import webbrowser
 
-base_url = "https://www.google.co.uk/maps/dir/"
-destinations = sys.argv[1:]
+arguments = sys.argv
 
-if len(sys.argv) > 1 and len(sys.argv) < 11:
-    final_url = base_url
-    
-    for destination in destinations:
-        final_url += str(destination + "/")
+def get_directions(arguments):
 
-    print(final_url)
-    
-    webbrowser.get('chrome').open_new_tab(final_url)
-else:
-    print("Error: Number of locations should be greater than 1 and less than 11")
+    destinations = arguments[1:]
 
+    base_url = "https://www.google.co.uk/maps/dir/"
+    final_url = ""
+
+    if len(arguments) > 1 and len(arguments) < 11:
+        final_url = base_url
+        
+        for destination in destinations:
+            final_url += str(destination + "/")
+        
+        webbrowser.get('chrome').open_new_tab(final_url)
+        
+    else:
+        error_message = "Error: Number of locations should be greater than 1 and less than 11"
+        
+        return error_message
+
+    return final_url
+
+get_directions(arguments)
 
 # a[start:stop]  # items start through stop-1
 # a[start:]      # items start through the rest of the array
